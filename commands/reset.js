@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 
 module.exports = {
-    name: 'clear',
+    name: 'reset',
 	description: 'Clears everything!',
 	execute(msg, args) {
         //clear gamefile

@@ -4,7 +4,7 @@ const disconnect = require("./commands/disconnect");
 
 const bot = new Discord.Client();
 const PREFIX = "!";
-const TOKEN = "NzY0NTA3NjMxMDU4NDE5NzIy.X4HRNw.LZOv48svqn5LcXG9teLcZ9tG1-c";
+const TOKEN = "";
 
 const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith('.js'));
 bot.commands = new Discord.Collection();
@@ -33,18 +33,19 @@ bot.on('message', async msg=>{
     }
 
     if (message[0]==PREFIX) {
+        if (!bot.commands.has(args[0])) return;
+
+        try {
+            bot.commands.get(args[0]).execute(msg, args);
+        } catch (error) {
+            console.error(error);
+            message.reply(`There was an error trying to execute the ${args[0]} command!`);
+        }
+
         switch(args[0])
         {
             
         }
-    }
-
-    if (!bot.commands.has(args[0])) return;
-    try {
-        bot.commands.get(args[0]).execute(msg, args);
-    } catch (error) {
-        console.error(error);
-        message.reply(`There was an error trying to execute the ${args[0]} command!`);
     }
 })
 

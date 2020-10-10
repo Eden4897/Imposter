@@ -12,7 +12,8 @@ module.exports = {
             {name: "disconnect", value: "Makes Imposter disconnect from your current channel, unmute everyone and clear game data."},
             {name: "start", value: "Starts the round and mutes everyone"},
             {name: "meet", value: "Unmutes all alive people."},
-            {name: "kill [user]", value: "Registers the pined user as killed."}
+            {name: "kill [user]", value: "Registers the pinged user as killed."},
+            {name: "reset", value: "Reset all values for next game."}
         );
         msg.channel.send(embed);
 	},

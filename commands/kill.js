@@ -13,9 +13,7 @@ module.exports = {
             msg.channel.send(`${msg.mentions.members.first().displayName} had died. RIP.`);
         }
         else{
-            game["dead"].push(msg.author.id);
-            msg.author.voice.setMute(true);
-            msg.channel.send(`${msg.author.displayName} had died. RIP.`);
+            msg.channel.send("Error: no target to kill.");
         }
 
         fs.writeFileSync("./game.json", JSON.stringify(game, null, 4));
