@@ -4,7 +4,7 @@ const disconnect = require("./commands/disconnect");
 
 const bot = new Discord.Client();
 const PREFIX = "!";
-const TOKEN = "NzY0NTA3NjMxMDU4NDE5NzIy.X4HRNw.K0t7eXS4O9MRrz4DDxWaxgjVZ9w";
+const TOKEN = "NzY0NTA3NjMxMDU4NDE5NzIy.X4HRNw.JxE1fus0-N76qUXdrYGoQk4oR9k";
 
 const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith('.js'));
 bot.commands = new Discord.Collection();
