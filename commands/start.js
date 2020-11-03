@@ -11,7 +11,7 @@ module.exports = {
             msg.channel.send("Error.");
         }
         for (let member of channel.members) {
-            member[1].voice.setMute(true)
+            member[1].voice.setMute(true);
         }
         msg.channel.send("Everyone had been muted. Game has started.");
 	},

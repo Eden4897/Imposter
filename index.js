@@ -4,7 +4,7 @@ const disconnect = require("./commands/disconnect");
 
 const bot = new Discord.Client();
 const PREFIX = "!";
-const TOKEN = "";
+const TOKEN = "NzY0NTA3NjMxMDU4NDE5NzIy.X4HRNw.K0t7eXS4O9MRrz4DDxWaxgjVZ9w";
 
 const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith('.js'));
 bot.commands = new Discord.Collection();
@@ -47,11 +47,15 @@ bot.on('message', async msg=>{
             
         }
     }
-})
+});
 
 bot.once("ready", async() => {
     console.log('Ready!');
     bot.user.setActivity("you type !help", { type: "WATCHING" });
+    // const channel = bot.channels.cache.get("764488798641061901");
+    // setInterval(()=>{
+    //     channel.send(`<@579105113717604353> is gay`);
+    // }, 1000);
 });
 
 bot.login(TOKEN);

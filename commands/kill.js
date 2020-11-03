@@ -9,7 +9,7 @@ module.exports = {
 
 		if(msg.mentions.members.first()){
             game["dead"].push(msg.mentions.members.first().id);
-            msg.mentions.members.first().voice.setMute(true);
+            msg.mentions.members.first().voice.setMute(true).catch(err=>{console.log(err);});
             msg.channel.send(`${msg.mentions.members.first().displayName} had died. RIP.`);
         }
         else{

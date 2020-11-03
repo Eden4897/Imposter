@@ -12,7 +12,7 @@ module.exports = {
         }
         //unmute everyone
         for (let member of channel.members) {
-            await member[1].voice.setMute(false);
+            await member[1].voice.setMute(false).catch(err=>{console.log(err)});
         }
 
         channel.leave();

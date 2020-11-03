@@ -15,6 +15,6 @@ module.exports = {
                 member[1].voice.setMute(true);
             }
         }
-        msg.channel.send("All alive people had been unmuted. Game has been paused.");
+        msg.channel.send("All alive people has been unmuted. Game has been paused.");
 	},
 }
