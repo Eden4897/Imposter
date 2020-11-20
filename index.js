@@ -52,12 +52,6 @@ bot.on('message', async msg=>{
 bot.once("ready", async() => {
     console.log('Ready!');
     bot.user.setActivity("you type !help", { type: "WATCHING" });
-    const channel = bot.channels.cache.get("766332531745882142");
-    let i = 207;
-    setInterval(()=>{
-        channel.send(i);
-        i++;
-    }, 2000);
 });
 
 bot.login(TOKEN);
