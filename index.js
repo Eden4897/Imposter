@@ -1,10 +1,10 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-const disconnect = require("./commands/disconnect");
+const botConfig = JSON.parse(fs.readFileSync("config.json"));
 
 const bot = new Discord.Client();
-const PREFIX = "!";
-const TOKEN = "NzY0NTA3NjMxMDU4NDE5NzIy.X4HRNw.JxE1fus0-N76qUXdrYGoQk4oR9k";
+const PREFIX = botConfig.prefix;
+const TOKEN = botConfig.token;
 
 const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith('.js'));
 bot.commands = new Discord.Collection();
@@ -52,10 +52,12 @@ bot.on('message', async msg=>{
 bot.once("ready", async() => {
     console.log('Ready!');
     bot.user.setActivity("you type !help", { type: "WATCHING" });
-    // const channel = bot.channels.cache.get("764488798641061901");
-    // setInterval(()=>{
-    //     channel.send(`<@579105113717604353> is gay`);
-    // }, 1000);
+    const channel = bot.channels.cache.get("766332531745882142");
+    let i = 207;
+    setInterval(()=>{
+        channel.send(i);
+        i++;
+    }, 2000);
 });
 
 bot.login(TOKEN);
